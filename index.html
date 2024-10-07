@@ -1,162 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aquasaic - Delivering Clean Water To Life's Mosaic/title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <img src="Aquasaic_logo.png" alt="Aquasaic Logo" class="h-10">
-                <span class="text-3xl font-light">Aquasaic Corporation</span>
-            </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-blue-700 transition-colors">About</a>
-                <a href="#technology" class="text-gray-600 hover:text-blue-700 transition-colors">Technology</a>
-                <a href="#impact" class="text-gray-600 hover:text-blue-700 transition-colors">Impact</a>
-                <a href="#team" class="text-gray-600 hover:text-blue-700 transition-colors">Team</a>
-                <a href="#partners" class="text-gray-600 hover:text-blue-700 transition-colors">Partners</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-700 transition-colors">Contact</a>
-            </nav>
-            <a href="mailto:founders@aquasaic.com" class="px-6 py-2 rounded-full font-semibold transition-colors bg-blue-700 text-white hover:bg-blue-800">
-                Get a Demo
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section with Story -->
-    <section class="hero-bg text-white py-20 relative">
-        <div id="bubbles"></div>
-        <div class="hero-overlay py-20">
-            <div class="container mx-auto px-4">
-                <div class="max-w-2xl">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Turning Wastewater into a Life-Saving Resource</h1>
-                    <p class="text-xl mb-8">
-                        Aquasaic’s technology transforms contaminated industrial wastewater into clean, reusable water. Join us on our mission to solve one of the world’s most critical water challenges.
-                    </p>
-                    <a href="#about" class="px-6 py-2 rounded-full font-semibold transition-colors bg-white text-blue-700 hover:bg-gray-100">
-                        Learn More
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="py-20">
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Aquasaic - Delivering Clean Water To Life's Mosaic</title> <script src="https://cdn.tailwindcss.com"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <link rel="stylesheet" href="styles.css"> </head> <body class="bg-gray-50 min-h-screen"> <!-- Header --> <header class="bg-white shadow-sm"> <div class="container mx-auto px-4 py-4 flex justify-between items-center"> <div class="flex items-center space-x-2"> <img src="Aquasaic_logo.png" alt="Aquasaic Logo" class="h-10"> <span class="text-3xl font-light">Aquasaic Corporation</span> </div> <nav class="hidden md:flex space-x-6"> <a href="#about" class="text-gray-600 hover:text-blue-700 transition-colors">About</a> <a href="#technology" class="text-gray-600 hover:text-blue-700 transition-colors">Technology</a> <a href="#impact" class="text-gray-600 hover:text-blue-700 transition-colors">Impact</a> <a href="#team" class="text-gray-600 hover:text-blue-700 transition-colors">Team</a> <a href="#partners" class="text-gray-600 hover:text-blue-700 transition-colors">Partners</a> <a href="#contact" class="text-gray-600 hover:text-blue-700 transition-colors">Contact</a> </nav> <a href="mailto:founders@aquasaic.com" class="px-6 py-2 rounded-full font-semibold transition-colors bg-blue-700 text-white hover:bg-blue-800"> Get a Demo </a> </div> </header>
+<!-- Hero Section with Story -->
+<section class="hero-bg text-white py-20 relative">
+    <div id="bubbles"></div>
+    <div class="hero-overlay py-20">
         <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold mb-6">Our Story</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Aquasaic was born from a shared passion between two visionaries, <strong>Shalmalee Pandit</strong> and <strong>Nikita Patil</strong>, who grew up in regions where water scarcity and pollution were daily realities. Together, they’ve dedicated their lives to creating a **sustainable** solution that not only cleans water but restores ecosystems.
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Turning Wastewater into a Life-Saving Resource</h1>
+                <p class="text-xl mb-8">
+                    Aquasaic's technology transforms contaminated industrial wastewater into clean, reusable water. Join us on our mission to solve one of the world's most critical water challenges.
                 </p>
-            </div>
-
-            <div class="mt-12 flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12">
-                <div class="text-center max-w-md">
-                    <i class="fa-solid fa-water text-blue-700 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Solving a Global Crisis</h3>
-                    <p class="text-gray-600">Over 80% of industrial wastewater is released untreated into the environment. Aquasaic tackles this with breakthrough technology that can be deployed across industries.</p>
-                </div>
-                <div class="text-center max-w-md">
-                    <i class="fa-solid fa-recycle text-blue-700 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Eco-Friendly Solutions</h3>
-                    <p class="text-gray-600">By using bioengineered yeast, we’re able to clean water in a way that’s safe, energy-efficient, and scalable—eliminating the need for harsh chemicals.</p>
-                </div>
+                <a href="#about" class="px-6 py-2 rounded-full font-semibold transition-colors bg-white text-blue-700 hover:bg-gray-100">
+                    Learn More
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Technology Section with Icons -->
-    <section id="technology" class="bg-gray-100 py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">How Our Technology Works</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-flask text-blue-700 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Bioengineered Yeast</h3>
-                    <p class="text-gray-600">Our proprietary yeast absorbs heavy metals and contaminants from wastewater, transforming it into clean water fit for reuse.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-leaf text-green-500 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Energy-Efficient & Eco-Friendly</h3>
-                    <p class="text-gray-600">Aquasaic reduces energy consumption by 60%, while also promoting sustainable practices through non-toxic methods.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-industry text-yellow-500 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Scalable Across Industries</h3>
-                    <p class="text-gray-600">Our technology is adaptable to various industries, including mining, manufacturing, and energy production, making it an ideal solution for large-scale water management.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founders Section with Personal Stories -->
-    <section id="team" class="py-20 bg-blue-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Meet The Team</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="text-center">
-                    <img src="Shalmalee.png" alt="Shalmalee Pandit" class="w-32 h-32 rounded-full mx-auto mb-4">
-                    <h3 class="text-xl font-semibold">Dr. Shalmalee Pandit, PhD</h3>
-
-                    <p class="text-gray-600 mb-4">Growing up in a water-scarce region, Shalmalee understood firsthand the importance of clean water. With a PhD from MIT in bioengineering, she combines her expertise and passion to develop technologies that bring life to polluted water bodies.</p>
-                </div>
-                <div class="text-center">
-                    <img src="Nikita.jpeg" alt="Nikita Patil" class="w-32 h-32 rounded-full mx-auto mb-4">
-                    <h3 class="text-xl font-semibold">Dr. Nikita Patil, PhD</h3>
-
-                    <p class="text-gray-600 mb-4">Nikita, an environmental engineer with a PhD from UT Austin, was inspired by the devastating impacts of untreated wastewater on communities in India. She has dedicated her career to transforming industrial water treatment, ensuring a healthier planet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section id="partners" class="py-20">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-12">Our Partners & Support</h2>
-            <p class="text-xl text-gray-600 mb-8">
-                Aquasaic is proud to be supported by leaders in sustainability and water management. Our partners help us scale our impact across the globe.
+<!-- About Us Section -->
+<section id="about" class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Aquasaic was born from a shared passion between two visionaries, <strong>Shalmalee Pandit</strong> and <strong>Nikita Patil</strong>, who grew up in regions where water scarcity and pollution were daily realities. Together, they've dedicated their lives to creating a <strong>sustainable</strong> solution that not only cleans water but restores ecosystems.
             </p>
-            <div class="flex justify-center items-center space-x-8">
-                <img src="MassChallenge_Logo.jpg" alt="MassChallenge Logo" class="h-12">
-                <img src="ACCEL.jpeg" alt="ACCEL Logo" class="h-12">
-                <img src="iCorps_logo.jpeg" alt="iCorps Logo" class="h-12">
-                <img src="xtreme.jpeg" alt="Xtreme Logo" class="h-12">
-                <img src="CTO.jpeg" alt="CTO Logo" class="h-12">
-                <img src="antioch_logo.jpg" alt="Antioch Logo" class="h-12">
+        </div>
+
+        <div class="mt-12 flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12">
+            <div class="text-center max-w-md">
+                <i class="fa-solid fa-water text-blue-700 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Solving a Global Crisis</h3>
+                <p class="text-gray-600">Over 80% of industrial wastewater is released untreated into the environment. Aquasaic tackles this with breakthrough technology that can be deployed across industries.</p>
+            </div>
+            <div class="text-center max-w-md">
+                <i class="fa-solid fa-recycle text-blue-700 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Eco-Friendly Solutions</h3>
+                <p class="text-gray-600">By using bioengineered yeast, we're able to clean water in a way that's safe, energy-efficient, and scalable—eliminating the need for harsh chemicals.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Call to Action -->
-    <section id="contact" class="py-20 text-center">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12">Let’s Make Clean Water a Reality</h2>
-            <p class="text-xl text-gray-600 mb-6">Want to collaborate or invest? Connect with us and explore how we can bring sustainable water solutions to your industry.</p>
-            <a href="mailto:founders@aquasaic.com" class="px-6 py-2 rounded-full font-semibold transition-colors bg-blue-700 text-white hover:bg-blue-800">
-                Contact Us Today
-            </a>
+<!-- Technology Section with Icons -->
+<section id="technology" class="bg-gray-100 py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">How Our Technology Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <i class="fas fa-flask text-blue-700 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">Bioengineered Yeast</h3>
+                <p class="text-gray-600">Our proprietary yeast absorbs heavy metals and contaminants from wastewater, transforming it into clean water fit for reuse.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <i class="fas fa-leaf text-green-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">Energy-Efficient & Eco-Friendly</h3>
+                <p class="text-gray-600">Aquasaic reduces energy consumption by 60%, while also promoting sustainable practices through non-toxic methods.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <i class="fas fa-industry text-yellow-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">Scalable Across Industries</h3>
+                <p class="text-gray-600">Our technology is adaptable to various industries, including mining, manufacturing, and energy production, making it an ideal solution for large-scale water management.</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Aquasaic. All Rights Reserved.</p>
+<!-- Founders Section with Personal Stories -->
+<section id="team" class="py-20 bg-blue-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Meet The Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="text-center">
+                <img src="Shalmalee.png" alt="Shalmalee Pandit" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Dr. Shalmalee Pandit, PhD</h3>
+                <p class="text-gray-600 mb-4">Growing up in a water-scarce region, Shalmalee understood firsthand the importance of clean water. With a PhD from MIT in bioengineering, she combines her expertise and passion to develop technologies that bring life to polluted water bodies.</p>
+            </div>
+            <div class="text-center">
+                <img src="Nikita.jpeg" alt="Nikita Patil" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Dr. Nikita Patil, PhD</h3>
+                <p class="text-gray-600 mb-4">Nikita, an environmental engineer with a PhD from UT Austin, was inspired by the devastating impacts of untreated wastewater on communities in India. She has dedicated her career to transforming industrial water treatment, ensuring a healthier planet.</p>
+            </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="script.js"></script>
-</body>
+<!-- Partners Section -->
+<section id="partners" class="py-20">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-12">Our Partners & Support</h2>
+        <p class="text-xl text-gray-600 mb-8">
+            Aquasaic is proud to be supported by leaders in sustainability and water management. Our partners help us scale our impact across the globe.
+        </p>
+        <div class="flex justify-center items-center space-x-8">
+            <img src="MassChallenge_Logo.jpg" alt="MassChallenge Logo" class="h-12">
+            <img src="ACCEL.jpeg" alt="ACCEL Logo" class="h-12">
+            <img src="iCorps_logo.jpeg" alt="iCorps Logo" class="h-12">
+            <img src="xtreme.jpeg" alt="Xtreme Logo" class="h-12">
+            <img src="CTO.jpeg" alt="CTO Logo" class="h-12">
+            <img src="antioch_logo.jpg" alt="Antioch Logo" class="h-12">
+        </div>
+    </div>
+</section>
 
-</html>
+<!-- Call to Action -->
+<section id="contact" class="py-20 text-center">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12">Let's Make Clean Water a Reality</h2>
+        <p class="text-xl text-gray-600 mb-6">Want to collaborate or invest? Connect with us and explore how we can bring sustainable water solutions to your industry.</p>
+        <a href="mailto:founders@aquasaic.com" class="px-6 py-2 rounded-full font-semibold transition-colors bg-blue-700 text-white hover:bg-blue-800">
+            Contact Us Today
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400 py-6">
+    <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2024 Aquasaic. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body> </html>
