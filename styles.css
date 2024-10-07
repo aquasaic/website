@@ -1,0 +1,58 @@
+:root {
+    --primary-light: #6ECBF5;
+    --primary-dark: #0077BE;
+    --secondary: #001E80;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --background-light: #F5F8FA;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-bg {
+    background-image: url('https://img.freepik.com/free-photo/fresh-water-texture-background-transparent-liquid_53876-142911.jpg?size=626&ext=jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.partner-logos img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.partner-logos img:hover {
+    transform: scale(1.1);
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
