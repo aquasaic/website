@@ -11,9 +11,11 @@ window.addEventListener('scroll', () => {
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileNavLinks = document.querySelector('.mobile-nav-links');
-menuToggle.addEventListener('click', () => {
-    mobileNavLinks.classList.toggle('active');
-});
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        mobileNavLinks.classList.toggle('active');
+    });
+}
 
 // FAQ Data
 const faqData = [
@@ -92,75 +94,80 @@ const categories = [
 ];
 
 // Render categories
-faqCategoriesContainer.innerHTML = categories.map(cat => `
-    <button class="faq-category ${cat.id === 'all' ? 'active' : ''}" data-category="${cat.id}">
-        ${cat.label}
-    </button>
-`).join('');
+if (faqCategoriesContainer) {
+    faqCategoriesContainer.innerHTML = categories.map(cat => `
+        <button class="faq-category ${cat.id === 'all' ? 'active' : ''}" data-category="${cat.id}">
+            ${cat.label}
+        </button>
+    `).join('');
+}
 
-// Filter and render FAQs
 let currentCategory = 'all';
 
 function renderFAQs() {
-    const searchTerm = faqSearch.value.toLowerCase();
+    const searchTerm = faqSearch ? faqSearch.value.toLowerCase() : '';
     const filteredFAQs = faqData.filter(faq => {
         const matchesCategory = currentCategory === 'all' || faq.category === currentCategory;
         const matchesSearch = faq.question.toLowerCase().includes(searchTerm) || faq.answer.toLowerCase().includes(searchTerm);
         return matchesCategory && matchesSearch;
     });
 
-    if (filteredFAQs.length === 0) {
-        faqContainer.innerHTML = `
-            <div class="no-results">
-                <p>No questions found matching "${faqSearch.value}"</p>
-                <button class="button primary" onclick="clearSearch()">Clear Search</button>
+    if (faqContainer) {
+        if (filteredFAQs.length === 0) {
+            faqContainer.innerHTML = `
+                <div class="no-results">
+                    <p>No questions found matching "${searchTerm}"</p>
+                    <button class="button primary" onclick="clearSearch()">Clear Search</button>
+                </div>
+            `;
+            return;
+        }
+
+        faqContainer.innerHTML = filteredFAQs.map((faq, index) => `
+            <div class="faq-item">
+                <div class="faq-question">
+                    ${faq.question}
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">${faq.answer}</div>
             </div>
-        `;
-        return;
-    }
+        `).join('');
 
-    faqContainer.innerHTML = filteredFAQs.map((faq, index) => `
-        <div class="faq-item">
-            <div class="faq-question">
-                ${faq.question}
-                <span class="faq-icon">+</span>
-            </div>
-            <div class="faq-answer">${faq.answer}</div>
-        </div>
-    `).join('');
+        // Add click events
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                const icon = q.querySelector('.faq-icon');
 
-    // Add click events
-    document.querySelectorAll('.faq-question').forEach(q => {
-        q.addEventListener('click', () => {
-            const answer = q.nextElementSibling;
-            const icon = q.querySelector('.faq-icon');
+                // Close other FAQs
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    if (a !== answer) {
+                        a.style.maxHeight = null;
+                        a.classList.remove('active');
+                        a.previousElementSibling.classList.remove('active');
+                        a.previousElementSibling.querySelector('.faq-icon').textContent = '+';
+                    }
+                });
 
-            // Close other FAQs
-            document.querySelectorAll('.faq-answer').forEach(a => {
-                if (a !== answer) {
-                    a.style.maxHeight = null;
-                    a.classList.remove('active');
-                    a.previousElementSibling.classList.remove('active');
-                    a.previousElementSibling.querySelector('.faq-icon').textContent = '+';
+                q.classList.toggle('active');
+                answer.classList.toggle('active');
+                if (answer.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.textContent = '−';
+                } else {
+                    answer.style.maxHeight = null;
+                    icon.textContent = '+';
                 }
             });
-
-            q.classList.toggle('active');
-            answer.classList.toggle('active');
-            if (answer.classList.contains('active')) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.textContent = '−';
-            } else {
-                answer.style.maxHeight = null;
-                icon.textContent = '+';
-            }
         });
-    });
+    }
 }
 
 function clearSearch() {
-    faqSearch.value = '';
-    renderFAQs();
+    if (faqSearch) {
+        faqSearch.value = '';
+        renderFAQs();
+    }
 }
 
 // Category filtering
@@ -174,16 +181,35 @@ document.querySelectorAll('.faq-category').forEach(button => {
 });
 
 // Search filtering
-faqSearch.addEventListener('input', () => {
-    renderFAQs();
-});
+if (faqSearch) {
+    faqSearch.addEventListener('input', () => {
+        renderFAQs();
+    });
+}
 
 renderFAQs();
 
-// Contact Form Submission (just a simple alert for demo)
+// Contact Form Submission
 const contactForm = document.querySelector('.contact-form-wrapper form');
-contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Message sent! We will get back to you soon.');
-    contactForm.reset();
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+        // Gather form data
+        const formData = new FormData(contactForm);
+        const fullName = formData.get('Full Name') || '';
+        const email = formData.get('Email Address') || '';
+        const company = formData.get('Company') || '';
+        const message = formData.get('Message') || '';
+
+        // Construct the mailto link with form data in the body
+        const subject = encodeURIComponent('Contact Aquasaic Inquiry');
+        const body = encodeURIComponent(`Name: ${fullName}\nEmail: ${email}\nCompany: ${company}\nMessage: ${message}`);
+        const mailtoLink = `mailto:founders@aquasaic.com?subject=${subject}&body=${body}`;
+
+        // Redirect user to mailto link
+        window.location.href = mailtoLink;
+
+        // Reset the form
+        contactForm.reset();
+    });
+}
