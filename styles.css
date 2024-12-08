@@ -124,8 +124,15 @@ button, input, textarea {
     align-items: center;
 }
 
+/* Different sizes for the logos */
 .logo img {
-    height: 40px;
+    height: 50px; /* Main nav logo size */
+    width: auto;
+}
+
+.footer-brand img {
+    height: 30px; /* Smaller footer logo size for subtlety */
+    width: auto;
 }
 
 .nav-links {
@@ -266,9 +273,7 @@ button, input, textarea {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     display: inline-block;
-    
 }
-
 
 /* Technology Section */
 .tech-section {
@@ -334,28 +339,31 @@ button, input, textarea {
 
 .founders-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
     margin-top: 3rem;
 }
 
-.founders-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
+.founder-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
 }
 .founder-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
+
+/* Ensure consistent founder image sizing */
 .founder-card img {
     width: 100%;
-    height: auto; /* ensures the image scales proportionally */
-    border-radius: var(--border-radius-lg);
-    object-fit: cover;
-    aspect-ratio: 1/1; /* If supported, this ensures a square crop */
+    height: 300px; /* Consistent height */
+    object-fit: cover; /* Crop image to fill area */
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; /* Top corners only */
 }
+
 .founder-content {
     padding: 2rem;
 }
@@ -406,8 +414,11 @@ button, input, textarea {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
+
+/* Ensure partner logos are uniformly displayed */
 .partner-item img {
     max-width: 100%;
+    max-height: 60px; /* Uniform logo height */
     height: auto;
     object-fit: contain;
 }
@@ -622,7 +633,6 @@ button, input, textarea {
 .social-links a:hover {
     text-decoration: underline;
 }
-
 
 /* Footer */
 .footer {
