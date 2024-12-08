@@ -123,7 +123,7 @@ function renderFAQs() {
             return;
         }
 
-        faqContainer.innerHTML = filteredFAQs.map((faq, index) => `
+        faqContainer.innerHTML = filteredFAQs.map((faq) => `
             <div class="faq-item">
                 <div class="faq-question">
                     ${faq.question}
@@ -201,12 +201,15 @@ if (contactForm) {
         const company = formData.get('Company') || '';
         const message = formData.get('Message') || '';
 
-        // Construct the mailto link with form data in the body
+        // Construct the mailto link
         const subject = encodeURIComponent('Contact Aquasaic Inquiry');
         const body = encodeURIComponent(`Name: ${fullName}\nEmail: ${email}\nCompany: ${company}\nMessage: ${message}`);
         const mailtoLink = `mailto:founders@aquasaic.com?subject=${subject}&body=${body}`;
 
-        // Redirect user to mailto link
+        // Show alert to the user
+        alert('Message sent! We will get back to you soon.');
+
+        // Open user’s default email client
         window.location.href = mailtoLink;
 
         // Reset the form
